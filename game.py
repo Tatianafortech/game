@@ -1,29 +1,24 @@
 # game.py
 
-def run_quiz(answer):
+def run_quiz(user_ready='yes', answer_1='python', answer_2='yes', answer_3='askpython'):
     score = 0
     total_questions = 3
 
     print('Welcome to AskPython Quiz')
-    user_ready = input('Are you ready to play the Quiz? (yes/no): ')
-
     if user_ready.lower() == 'yes':
-        answer_1 = input('Question 1: What is your favorite programming language? ')
-        if answer_1.lower() == 'python':
+        if input('Question 1: What is your favorite programming language? ').lower() == answer_1:
             score += 1
             print('Correct!')
         else:
             print('Wrong Answer :(')
 
-        answer_2 = input('Question 2: Do you follow any author on AskPython? ')
-        if answer_2.lower() == 'yes':
+        if input('Question 2: Do you follow any author on AskPython? ').lower() == answer_2:
             score += 1
             print('Correct!')
         else:
             print('Wrong Answer :(')
 
-        answer_3 = input('Question 3: What is the name of your favorite website for learning Python? ')
-        if answer_3.lower() == 'askpython':
+        if input('Question 3: What is the name of your favorite website for learning Python? ').lower() == answer_3:
             score += 1
             print('Correct!')
         else:
@@ -35,4 +30,4 @@ def run_quiz(answer):
     print('BYE!')
 
 if __name__ == '__main__':
-    run_quiz('python')  # You can replace this with user input if needed
+    run_quiz()
