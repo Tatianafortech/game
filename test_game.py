@@ -17,9 +17,9 @@ class TestGame(unittest.TestCase):
             call('BYE!')
         ]
         mock_print.assert_has_calls(expected_calls)
-        # print("Output for 'test_run_quiz_all_correct_answers':")
+        print("Output for 'test_run_quiz_all_correct_answers':")
         # for call_args in mock_print.call_args_list:
-        #     print(call_args)
+            # print(call_args)
 
     @patch('builtins.input', side_effect=['london', 'no', '5'])
     @patch('builtins.print')
@@ -35,7 +35,7 @@ class TestGame(unittest.TestCase):
             call('BYE!')
         ]
         mock_print.assert_has_calls(expected_calls)
-        # print("Output for 'test_run_quiz_some_incorrect_answers':")
+        print("Output for 'test_run_quiz_some_incorrect_answers':")
         # for call_args in mock_print.call_args_list:
         #     print(call_args)
 
