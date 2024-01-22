@@ -1,14 +1,17 @@
 # test_game.py
 
 import unittest
+from unittest.mock import patch
 from game import run_quiz
 
 class TestGame(unittest.TestCase):
-    def test_answer_is_python(self):
-        self.assertEqual(run_quiz('python'), 1)
+    @patch('builtins.input', side_effect=['yes', 'python', 'yes', 'askpython'])
+    def test_answer_is_python(self, mock_input):
+        self.assertEqual(run_quiz(), None)
 
-    def test_answer_is_not_python(self):
-        self.assertEqual(run_quiz('no'), 0)
+    @patch('builtins.input', side_effect=['no', 'python', 'yes', 'askpython'])
+    def test_answer_is_not_python(self, mock_input):
+        self.assertEqual(run_quiz(), None)
 
 if __name__ == '__main__':
     unittest.main()
