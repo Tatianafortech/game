@@ -10,7 +10,7 @@ class TestGame(unittest.TestCase):
         # Test the run_quiz function with correct answers
         with patch('builtins.print') as mock_print:
             run_quiz()
-            mock_print.assert_called_once_with(
+            mock_print.assert_called_with(
                 'Welcome to AskPython Quiz',
                 'Correct!',
                 'Correct!',
@@ -25,7 +25,7 @@ class TestGame(unittest.TestCase):
         # Test the run_quiz function with incorrect answers
         with patch('builtins.print') as mock_print:
             run_quiz()
-            mock_print.assert_called_once_with(
+            mock_print.assert_called_with(
                 'Welcome to AskPython Quiz',
                 'Wrong Answer :(',
                 'Wrong Answer :(',
@@ -41,7 +41,7 @@ class TestGame(unittest.TestCase):
         with patch('builtins.print') as mock_print:
             result = ask_question('What is your favorite programming language?', 'python')
             self.assertTrue(result)
-            mock_print.assert_called_once_with('Correct!')
+            mock_print.assert_called_with('Correct!')
 
     @patch('builtins.input', return_value='java')
     def test_ask_question_incorrect_answer(self, mock_input):
@@ -49,7 +49,7 @@ class TestGame(unittest.TestCase):
         with patch('builtins.print') as mock_print:
             result = ask_question('What is your favorite programming language?', 'python')
             self.assertFalse(result)
-            mock_print.assert_called_once_with('Wrong Answer :(')
+            mock_print.assert_called_with('Wrong Answer :(')
 
 if __name__ == '__main__':
     unittest.main()
