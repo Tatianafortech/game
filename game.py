@@ -10,7 +10,7 @@ def run_quiz():
 
     print('Welcome to the Quiz!')
     for question, correct_answer in questions:
-        user_answer = input(question).lower()
+        user_answer = get_user_input(question)
         if user_answer == correct_answer:
             print('Correct!')
             score += 1
@@ -21,6 +21,9 @@ def run_quiz():
     percentage = (score / total_questions) * 100
     print(f'Marks obtained: {percentage:.2f}%')
     print('BYE!')
+
+def get_user_input(question):
+    return input(question).lower()
 
 if __name__ == '__main__':
     run_quiz()
