@@ -43,12 +43,12 @@ class TestGame(unittest.TestCase):
     @patch('builtins.print')
 
     def test_get_user_input(self, mock_print, mock_input):
-    result = get_user_input('Enter something: ')
-    self.assertEqual(result, 'user_input')
-    
-    print("Output for 'test_get_user_input':")
-    for call in mock_print.mock_calls:
-        print(call)
+        result = get_user_input('Enter something: ')
+        self.assertEqual(result, 'user_input')
+        
+        print("Output for 'test_get_user_input':")
+        for call in mock_print.mock_calls:
+            print(call)
     # def test_get_user_input(self, mock_print, mock_input):
     #     result = get_user_input('Enter something: ')
     #     self.assertEqual(result, 'user_input')
