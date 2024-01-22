@@ -13,5 +13,9 @@ class TestGame(unittest.TestCase):
     def test_answer_is_not_python(self, mock_input):
         self.assertEqual(run_quiz(), None)
 
+    @patch('builtins.input', side_effect=['no', 'python', 'yes', 'askpython'])
+    def test_answer_is_not_python(self, mock_input):
+        self.assertEqual(run_quiz_correct(), None)
+        
 if __name__ == '__main__':
     unittest.main()
