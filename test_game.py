@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from game import run_quiz
+from game import run_quiz, get_user_input
 
 class TestGame(unittest.TestCase):
     @patch('builtins.input', side_effect=['paris', 'yes', '7'])
@@ -30,6 +30,11 @@ class TestGame(unittest.TestCase):
             'BYE!'
         ]
         mock_print.assert_has_calls([call(msg) for msg in expected_calls])
+
+    @patch('builtins.input', return_value='user_input')
+    def test_get_user_input(self, mock_input):
+        result = get_user_input('Enter something: ')
+        self.assertEqual(result, 'user_input')
 
 if __name__ == '__main__':
     unittest.main()
