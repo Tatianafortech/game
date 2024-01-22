@@ -30,3 +30,10 @@ print('Thank you for Playing this small quiz game, you attempted',score,"questio
 mark=(score/total_questions)*100
 print('Marks obtained:',mark)
 print('BYE!')
+
+def run_tests():
+    assert run_quiz('python') == 1
+    assert run_quiz('no') == 0
+
+if __name__ == '__main__':
+    run_tests()
