@@ -17,9 +17,9 @@ class TestGame(unittest.TestCase):
             call('BYE!')
         ]
         mock_print.assert_has_calls(expected_calls)
-        print("Output for 'test_run_quiz_all_correct_answers':")
-        for call_args in mock_print.call_args_list:
-            print(call_args)
+        # print("Output for 'test_run_quiz_all_correct_answers':")
+        # for call_args in mock_print.call_args_list:
+        #     print(call_args)
 
     @patch('builtins.input', side_effect=['london', 'no', '5'])
     @patch('builtins.print')
@@ -35,18 +35,18 @@ class TestGame(unittest.TestCase):
             call('BYE!')
         ]
         mock_print.assert_has_calls(expected_calls)
-        print("Output for 'test_run_quiz_some_incorrect_answers':")
-        for call_args in mock_print.call_args_list:
-            print(call_args)
+        # print("Output for 'test_run_quiz_some_incorrect_answers':")
+        # for call_args in mock_print.call_args_list:
+        #     print(call_args)
 
     @patch('builtins.input', return_value='user_input')
     @patch('builtins.print')
     def test_get_user_input(self, mock_print, mock_input):
         result = get_user_input('Enter something: ')
         self.assertEqual(result, 'user_input')
-        print("Output for 'test_get_user_input':")
-        for call_args in mock_print.call_args_list:
-            print(call_args)
+        # print("Output for 'test_get_user_input':")
+        # for call_args in mock_print.call_args_list:
+        #     print(call_args)
 
 if __name__ == '__main__':
     unittest.main()
