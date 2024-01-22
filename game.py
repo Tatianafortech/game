@@ -31,3 +31,5 @@ def run_quiz(user_ready='yes', answer_1='python', answer_2='yes', answer_3='askp
 
 if __name__ == '__main__':
     run_quiz()
+    run_quiz_correct(answer_1='python', answer_2='yes', answer_3='askpython')
+
